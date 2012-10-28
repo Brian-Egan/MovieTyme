@@ -1,0 +1,47 @@
+<h1>Listing movies</h1>
+
+<!-- <table>
+  <tr>
+    <th>Name</th>
+    <th>Genre</th>
+    <th>Release date</th>
+    <th>Photo</th>
+    <th>Actors</th>
+    <th>Director</th>
+    <th>Running time</th>
+    <th>Rating</th>
+    <th>Youtube</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr> -->
+
+<% @movies.each do |movie| %>
+    <div class="Movie">
+<hr>
+    <%= image_tag(movie.photo) %>
+    <h2><%= link_to movie.name, movie %></h2>
+    <p><%= movie.release_date %></p>
+    <p>Running time: <%= movie.running_time %> </p>
+    <p>Starring: <%= movie.actors %> </p>
+    <p>Directed by: <%= movie.director %> </p>
+    <p>Genre: <%=movie.genre %></p>
+ 
+
+
+    </div>
+  <tr>
+   <!--  <td><%= movie.name %></td> -->
+    <td><%= movie.genre %></td>
+
+<br />
+    <td><%= link_to 'Edit', edit_movie_path(movie) %></td>
+    <td><%= link_to '(x)', movie, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <br />
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Movie', new_movie_path %>

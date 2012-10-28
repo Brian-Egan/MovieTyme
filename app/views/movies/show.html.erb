@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+<div class="Movie">
+<p class="MoviePoster">
+  <%= image_tag(@movie.photo) %>
+</p>
+
+<h1>
+  <%= @movie.name %>
+</h1>
+
+<p>
+  <b>Genre:</b>
+  <%= @movie.genre %>
+</p>
+
+<p>
+  <b>Release date:</b>
+  <%= @movie.release_date %>
+</p>
+
+<p>
+  <b>Actors:</b>
+  <%= @movie.actors %>
+</p>
+
+<p>
+  <b>Director:</b>
+  <%= @movie.director %>
+</p>
+
+<p>
+  <b>Running time:</b>
+  <%= @movie.running_time %>
+</p>
+
+<p>
+  <b>Rating:</b>
+  <%= @movie.rating %>
+</p>
+
+<p>
+   <%= render 'trailer' %>
+</p>
+</div>
+
+
+
+<%= link_to 'Edit', edit_movie_path(@movie) %> |
+<%= link_to 'Back', movies_path %>
